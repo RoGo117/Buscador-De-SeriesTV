@@ -1,0 +1,30 @@
+Page made by Rodrigo Moreno Bielsa 2ºDAW
+
+APIs Pages:
+
+TVmaze API (Public)
+    - Page : https://www.tvmaze.com/api
+    - Api URL : https://api.tvmaze.com/singlesearch/shows?q=friends
+
+
+TMDB API (Private)
+    - Page: https://developer.themoviedb.org/docs/getting-started
+    - Api URL: https://api.themoviedb.org/3/search/tv?query=friends&api_key=d64bf1ae52757a8b3651e8c283ae6cfc
+    - Api Key: d64bf1ae52757a8b3651e8c283ae6cfc
+
+GitHub Profile: RoGo117
+Github Repositorio: 
+
+
+Información de la página:
+
+La página consta de dos HTMLs, siendo el primero "index.html", en el cual se hace una introducción
+a la página y se permite acceder al servicio de búsqueda de series mediante un enlace.
+La segunda página es la principal, siendo esta "series.html", esta consta de 5 mecánicas, siendo la
+primera un búscador donde debes ingresar el nombre de una serie y el sistema te mostrará Información
+de la serie y series similares, además esta búsqueda se guardará en el localstorage como historial
+de busquedas, donde podrás mediante botones en la interfaz volver a ver la Información de las últimas
+series buscadas. Después existen otros dos buscadores numéricos, uno por el año de salida de la serie,
+donde los valores permitidos son entre 1989 y 2014, y el último buscador según la nota de la serie,
+donde los valores permitidos son del 1 al 10, y se muestran los valores redondeando hacia abajo al
+número buscado.

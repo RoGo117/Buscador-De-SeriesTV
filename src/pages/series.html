@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Page title-->
+    <title> Inicio Series de TV </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page icon-->
+    <link rel="shortcut icon" href="../../assets/images/logo.jpg" type="image/x-icon">
+    
+    <!-- TailwindCSS Link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Extra CSS Link -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-white">
+
+    <!-- Header -->
+    <header class="bg-blue-500 p-6">
+        <div class="container mx-auto flex justify-between items-center flex-wrap">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex flex-wrap">
+                <a href="#">
+                    <img src="../../assets/images/logoAZUL.png" alt="Logo" class="h-16">
+                </a>
+                            
+                <!-- Título que se oculta en pantallas pequeñas -->
+                <h1 class="text-lg text-white font-bold hidden sm:block mt-4">Buscador de Series de TV</h1>
+            </div>
+            
+            <!-- Navegación -->
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="../index.html" class="text-white hover:text-blue-200"> Buscar de Series</a></li>
+                    <li><a href="../index.html#historial-busquedas-section" class="text-white hover:text-blue-200"> Historial de Busquedas </a></li>
+                    <li><a href="#footer" class="text-white hover:text-blue-200"> APIS </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-12">
+
+        <!-- Intro Section -->
+        <section class="text-center">
+            <h2 class="text-4xl text-blue-600 font-bold mb-6">Bienvenidos al Buscador de Series</h2>
+            <p class="text-blue-400 max-w-2xl mx-auto leading-relaxed mb-9">
+                Este es un proyecto diseñado para ayudarte a encontrar tus series favoritas de TV. Puedes buscar por nombre, año, valoración y encontrar series similares a las buscadas.
+            </p>
+            <a href="../index.html" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-11 rounded">
+                Comenzar a buscar
+            </a>
+        </section>
+
+        <!-- Intro cards section -->
+        <section class="mt-14">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-blue-100 p-6 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:bg-blue-200 hover:scale-105">
+                    <h3 class="text-lg text-blue-700 font-semibold mb-2">Explora por nombre</h3>
+                    <p class="text-blue-600">Introduce el nombre de la serie que te interesa y obtén todos los detalles importantes.</p>
+                </div>
+                <div class="bg-blue-100 p-6 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:bg-blue-200 hover:scale-105">
+                    <h3 class="text-lg text-blue-700 font-semibold mb-2">Descubre por año</h3>
+                    <p class="text-blue-600">Encuentra series basadas en el año de lanzamiento, desde clásicos hasta los últimos lanzamientos.</p>
+                </div>
+                <div class="bg-blue-100 p-6 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:bg-blue-200 hover:scale-105">
+                    <h3 class="text-lg text-blue-700 font-semibold mb-2">Busca por rating</h3>
+                    <p class="text-blue-600">Filtra las series por su valoración para ver sólo las mejores calificadas.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-500 text-black w-full mt-20 p-8 text-center md:text-left" id="footer">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Public API link column -->
+            <div>
+                <h2 class="font-bold text-lg mb-2"> TVmaze Public API </h2>
+                <ul class="text-white text-sm list-disc list-inside">
+                    <li><a target="_blank" href="https://www.tvmaze.com/api" class="hover:text-black">TVmaze Page</a></li>
+                    <li><a target="_blank" href="https://api.tvmaze.com/singlesearch/shows?q=friends" class="hover:text-black">TVmaze API example</a></li>
+                </ul>
+            </div>
+          <!-- Private API link column -->
+            <div>
+                <h2 class="font-bold text-lg mb-2"> TMDB Private API </h2>
+                <ul class="text-white text-sm list-disc list-inside">
+                    <li><a target="_blank" href="https://www.themoviedb.org/documentation/api" class="hover:text-black">TMDB Page</a></li>
+                    <li><a target="_blank" href="https://api.themoviedb.org/3/search/tv?query=friends&api_key=d64bf1ae52757a8b3651e8c283ae6cfc" class="hover:text-black">TMDB API example</a></li>
+                </ul>
+            </div>
+            <!-- Others links column -->
+            <div>
+                <h2 class="font-bold text-lg mb-2">Enlaces Útiles</h2>
+                <ul class="text-white text-sm list-disc list-inside">
+                    <li><a href="#" class="hover:text-black">Contáctanos</a></li>
+                    <li><a href="#" class="hover:text-black">Privacidad</a></li>
+                    <li><a href="#" class="hover:text-black">Términos de Uso</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-gray-300 text-xs mt-8 text-center">
+            © 2024 Rodrigo MB Series Recommender - Todos los derechos reservados.
+        </div>
+    </footer>
+</body>
+</html>

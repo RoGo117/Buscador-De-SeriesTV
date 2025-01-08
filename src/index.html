@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Page title-->
+    <title> Series de TV </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page icon-->
+    <link rel="shortcut icon" href="../assets/images/logo.jpg" type="image/x-icon">
+    
+    <!-- TailwindCSS Link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Extra CSS Link -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="sticky top-0 left-0 right-0 z-50 bg-white shadow-md">
+        <nav class="w-full px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#">
+                        <img src="../assets/images/logo.jpg" alt="Logo" class="h-16">
+                    </a>
+                </div>
+
+                <!-- Right Buttons -->
+                <div class="hidden md:flex items-center space-x-0">
+                    <a href="./pages/series.html" class="text-sm text-gray-700 hover:text-gray-900 mr-5"> MENU </a>
+                    <a href="#searchbyname" class="text-sm text-gray-700 hover:text-gray-900 mr-5"> BUSCAR SERIES </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-button" class="text-gray-700 hover:text-gray-900 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Links -->
+            <div id="mobile-menu" class="hidden md:hidden">
+                <a href="./pages/series.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Home</a>
+                <a href="#searchbyname" class="block px-4 py-2 text-gray-700 hover:bg-gray-200"> Buscar series por su nombre</a>
+                <a href="#searchbyyear" class="block px-4 py-2 text-gray-700 hover:bg-gray-200"> Buscar series por año de salida</a>
+                <a href="#searchbyrating" class="block px-4 py-2 text-gray-700 hover:bg-gray-200"> Buscar series por nota</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-0 py-8">
+
+        <!-- Title -->
+        <h1 class="text-4xl font-bold text-blue-500 text-center mb-4 mt-4">Buscador de Series de TV</h1>
+
+        <img src="../assets/images/fondo3.jpg" alt="Imagen decorativa" class="fondo_border w-full h-28 mt-10 mb-10">
+            
+        <!-- Search by name section-->
+        <section class="mb-10" id="searchbyname">
+            <h2 class="text-2xl font-bold text-gray-800 my-4">Buscar Series por su nombre</h2>
+
+            <!-- Input section -->
+            <div class="flex space-x-4">
+                <input type="text" id="input" placeholder="Introduce el nombre de una serie" class="flex-grow p-2 border border-gray-300 rounded">
+                <button id="btnbuscar" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Buscar Serie</button>
+            </div>
+
+            <!-- Posible error result-->
+            <div id="mensaje-error" class="text-red-500 mt-2"></div>
+            <!-- Search results-->
+            <div id="serie-info" class="mt-6">
+                <h2 id="titulo" class="text-xl font-semibold"></h2>
+                <p id="fecha" class="text-gray-600"></p>
+                <p id="rating" class="text-gray-600"></p>
+                <p id="descripcion" class="text-gray-600"></p>
+                <img id="img" src="" alt="Imagen de la serie" class="w-40 mt-4 hidden"> 
+            </div>
+        </section>
+
+        <!-- Section for history -->
+         <section id="historial-busquedas-section" class="mt-10 mb-6">
+             <h2 class="text-2xl font-bold text-gray-800 mb-4"> Historial de Búsquedas </h2>
+             <div id="historial-busquedas" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                
+             </div>
+        </section>
+
+        <!-- Section for Year Search -->
+        <section class="mt-10" id="searchbyyear">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Buscar Series por Año (Entre 1989 y 2014)</h2>
+            <!-- Input section -->
+            <div class="flex space-x-4">
+                <input type="text" id="yearInput" placeholder="Introduce un año" class="flex-grow p-2 border border-gray-300 rounded">
+                <button id="yearSearchBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Buscar por Año</button>
+            </div>
+            <!-- Error Message -->
+            <p id="yearError" class="text-red-500 mt-2"></p>
+            <!-- Search results -->
+            <div id="year-search-results" class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+            </div>
+        </section>
+
+        <!-- Section for Rating Search -->
+        <section class="mt-10" id="searchbyrating">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Buscar Series por Nota</h2>
+            <!-- Input section -->
+            <div class="flex space-x-4">
+                <input type="number" id="ratingInput" placeholder="Introduce una valoración (0-10)" class="flex-grow p-2 border border-gray-300 rounded">
+                <button id="ratingSearchBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Buscar por Rating</button>
+            </div>
+            <!-- Error Message -->
+            <p id="ratingError" class="text-red-500 mt-2"></p>
+            <!-- Search results -->
+            <div id="rating-search-results" class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+            </div>
+        </section>
+
+        <!-- Section for Similar Series -->
+        <section>
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Series Similares</h2>
+
+            <!-- Search results -->
+            <div id="similar-series" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-200 w-full mt-20 p-8 text-center md:text-left">
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Public API link column -->
+            <div>
+                <h2 class="font-bold text-lg mb-2"> TVmaze Public API </h2>
+                <ul class="text-gray-700 text-sm list-disc list-inside">
+                    <li><a target="_blank" href="https://www.tvmaze.com/api" class="hover:text-blue-500">TVmaze Page</a></li>
+                    <li><a target="_blank" href="https://api.tvmaze.com/singlesearch/shows?q=friends" class="hover:text-blue-500">TVmaze API example</a></li>
+                </ul>
+            </div>
+            
+          <!-- Private API link column -->
+            <div>
+                <h2 class="font-bold text-lg mb-2"> TMDB Private API </h2>
+                <ul class="text-gray-700 text-sm list-disc list-inside">
+                    <li><a target="_blank" href="https://www.themoviedb.org/documentation/api" class="hover:text-blue-500">TMDB Page</a></li>
+                    <li><a target="_blank" href="https://api.themoviedb.org/3/search/tv?query=friends&api_key=d64bf1ae52757a8b3651e8c283ae6cfc" class="hover:text-blue-500">TMDB API example</a></li>
+                </ul>
+            </div>
+
+            <!-- Others links column -->
+            <div>
+                <h2 class="font-bold text-lg mb-2">Enlaces Útiles</h2>
+                <ul class="text-gray-700 text-sm list-disc list-inside">
+                    <li><a href="#" class="hover:text-blue-500">Contáctanos</a></li>
+                    <li><a href="#" class="hover:text-blue-500">Privacidad</a></li>
+                    <li><a href="#" class="hover:text-blue-500">Términos de Uso</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="text-gray-600 text-xs mt-8 text-center">
+            © 2024 Rodrigo MB Series Recommender - Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- JavaScript Link-->
+    <script src="./js/script.js"></script>
+</body>
+</html>
